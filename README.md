@@ -142,7 +142,7 @@ Se pide completar validaciones de circuito al facturar
 
 ### Implementaciones y Validaciones. Listado.
 
-  Puede haber más de un cliente, y se factura a uno u otro de forma exitosa.
+  Puede haber más de un cliente, y se factura a uno u otro de forma exitosa
   Se gestionan y facturan múltiples recibos de forma exitosa.
   Se gestionan y facturan múltiples pedidos de forma exitosa.
   Se facturan pedidos con varios renglones, calculando correctamente los totales.
