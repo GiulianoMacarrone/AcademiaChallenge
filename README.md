@@ -142,30 +142,30 @@ Se pide completar validaciones de circuito al facturar
 
 ### Implementaciones y Validaciones. Listado.
 
-  Puede haber más de un cliente, y se factura a uno u otro de forma exitosa
-  Se gestionan y facturan múltiples recibos de forma exitosa.
-  Se gestionan y facturan múltiples pedidos de forma exitosa.
-  Se facturan pedidos con varios renglones, calculando correctamente los totales.
-  No se puede agregar el mismo cliente más de 1 vez (usando el mismo código).
-  No se pueden tener dos clientes con el mismo código.
-  No se pueden tener dos clientes con la misma razón social (descripción).
-  No se puede agregar el mismo artículo más de 1 vez (usando el mismo código).
-  No se pueden tener dos artículos con la misma descripción.
-  Un mismo código de artículo siempre debe tener la misma descripción y precio unitario.
-  La numeración de los pedidos comienza en 1 y es correlativa, sin saltearse números (se valida que el número ingresado sea Max(Existente) + 1).
-  El cliente debe existir (validación de referencia), y los datos del pedido son consistentes con el cliente preexistente.
-  El artículo debe existir (validación de referencia).
-  Los renglones no pueden tener artículos repetidos (validado por código de artículo).
-  Las cantidades pedidas de cada renglón de pedido tienen que tener sentido (deben ser mayores a cero).
-  Los totales de cada renglón de pedido deben estar correctos: Se garantiza por diseño, ya que el PrecioTotal se calcula internamente (PrecioUnitario * Cantidad) y no se acepta como input para prevenir inconsistencias.
-  La numeración de los recibos comienza en 1 y es correlativa (se garantiza por diseño, ya que el número es generado internamente por la capa de negocio).
-  El cliente debe existir (validación de referencia), y los datos del recibo son consistentes con el cliente preexistente.
-  Se verifica que el Pedido exista antes de facturar.
-  Se verifica que el Recibo exista antes de facturar.
-  Se verifica que el Cliente (referenciado en el pedido y recibo) exista en la capa de datos maestra en el momento de la facturación.
-  El cliente del pedido y del recibo deben ser el mismo.
-  El importe del recibo debe corresponderse con el importe total a facturar (suma del total del pedido más los impuestos del cliente), utilizando una tolerancia decimal (0.01) para evitar errores de floating point.
-  Se verifica que si se solicita una factura, esta exista (FacturaNoEncontradaException).
+  - Puede haber más de un cliente, y se factura a uno u otro de forma exitosa
+  - Se gestionan y facturan múltiples recibos de forma exitosa.
+  - Se gestionan y facturan múltiples pedidos de forma exitosa.
+  - Se facturan pedidos con varios renglones, calculando correctamente los totales.
+  - No se puede agregar el mismo cliente más de 1 vez (usando el mismo código).
+  - No se pueden tener dos clientes con el mismo código.
+  - No se pueden tener dos clientes con la misma razón social (descripción).
+  - No se puede agregar el mismo artículo más de 1 vez (usando el mismo código).
+  - No se pueden tener dos artículos con la misma descripción.
+  - Un mismo código de artículo siempre debe tener la misma descripción y precio unitario.
+  - La numeración de los pedidos comienza en 1 y es correlativa, sin saltearse números (se valida que el número ingresado sea Max(Existente) + 1).
+  - El cliente debe existir (validación de referencia), y los datos del pedido son consistentes con el cliente preexistente.
+  - El artículo debe existir (validación de referencia).
+  - Los renglones no pueden tener artículos repetidos (validado por código de artículo).
+  - Las cantidades pedidas de cada renglón de pedido tienen que tener sentido (deben ser mayores a cero).
+  - Los totales de cada renglón de pedido deben estar correctos: Se garantiza por diseño, ya que el PrecioTotal se calcula internamente (PrecioUnitario * Cantidad) y no se acepta como input para prevenir inconsistencias.
+  - La numeración de los recibos comienza en 1 y es correlativa (se garantiza por diseño, ya que el número es generado internamente por la capa de negocio).
+  - El cliente debe existir (validación de referencia), y los datos del recibo son consistentes con el cliente preexistente.
+  - Se verifica que el Pedido exista antes de facturar.
+  - Se verifica que el Recibo exista antes de facturar.
+  - Se verifica que el Cliente (referenciado en el pedido y recibo) exista en la capa de datos maestra en el momento de la facturación.
+  - El cliente del pedido y del recibo deben ser el mismo.
+  - El importe del recibo debe corresponderse con el importe total a facturar (suma del total del pedido más los impuestos del cliente), utilizando una tolerancia decimal (0.01) para evitar errores de floating point.
+  - Se verifica que si se solicita una factura, esta exista (FacturaNoEncontradaException).
 
 ### Autor
 Implementación realizada por: Giuliano Sebastian Macarrone
